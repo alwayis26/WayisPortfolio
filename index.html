@@ -37,7 +37,7 @@
         </div>
     <!-- navbar -->
 
-    <div class="con">
+    <div class="con" id="home">
         <div class="container">
             <img src="images/light1.png" alt="" class="light1">
             <img src="images/light1.png" alt="" class="light2">
@@ -71,7 +71,7 @@
                         <div class="pengaleft">
                             <span class="subheader">TENTANG</span>
                             <h1 class="header">Al Wayis Karnis, UI UX Designer, Indonesia</h1>
-                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, ratione. Ipsam nemo adipisci vel nulla aspernatur dolorem recusandae, quibusdam voluptates.</p>
+                            <p class="paragraph">Saya sangat menyukai pembuatan desain interface, baik itu aplikasi, website dan lain sebagainya. Saya mempelajari berbagai aspek UI UX Design secara otodidak. Dengan berbagai macam implementasi proyek saya berharap kreatifitas saya dalam desain interface dapat berkembang dengan baik.</p>
                             <div class="pengaleftpanel">
                                 <div class="pengaleftpanela">
                                     <h2>Email</h2>
@@ -254,35 +254,35 @@
                         <div class="footera">
                             <div class="footeralogo">
                                 <div class="footeralogoup" title="pergi ke home">
-                                    <a href=""><i class="fa-solid fa-arrow-up" title="pergi ke home"></i></a>
+                                    <a href="#home"><i class="fa-solid fa-arrow-up" title="pergi ke home"></i></a>
                                 </div>
                                 <h1>a</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, libero!</p>
+                                <p>Terima kasih sudah mampir di website ini, jika berkenan untuk mampit di konten website saya lainnya melalui link yang sudah disediakan.</p>
                             </div>
                             <div class="footeralink">
                                 <div class="footeralinkpanel">
-                                    <span>Link</span>
-                                    <a href="">GeeksForGeeks</a>
-                                    <a href="">Github</a>
-                                    <a href="">Imdb</a>
-                                    <a href="">NextJS</a>
-                                    <a href="">GeeksForGeeks</a>
+                                    <span>SupportSystem</span>
+                                    <a href="https://www.geeksforgeeks.org/" target="_blank">GeeksForGeeks</a>
+                                    <a href="https://github.com/" target="_blank">Github</a>
+                                    <a href="https://www.imdb.com/" target="_blank">Imdb</a>
+                                    <a href="https://www.imdb.com/" target="_blank">NextJS</a>
+                                    <a href="https://dribbble.com/" target="_blank">GeeksForGeeks</a>
                                 </div>
                                 <div class="footeralinkpanel">
-                                    <span>Link</span>
-                                    <a href="">GeeksForGeeks</a>
-                                    <a href="">Github</a>
-                                    <a href="">Imdb</a>
-                                    <a href="">NextJS</a>
-                                    <a href="">GeeksForGeeks</a>
+                                    <span>Navigasi</span>
+                                    <a href="#home">Beranda</a>
+                                    <a href="#pengenalan">Pengenalan</a>
+                                    <a href="#proyek">Proyek</a>
+                                    <a href=""></a>
+                                    <a href=""></a>
                                 </div>
                                 <div class="footeralinkpanel">
-                                    <span>Link</span>
-                                    <a href="">GeeksForGeeks</a>
-                                    <a href="">Github</a>
-                                    <a href="">Imdb</a>
-                                    <a href="">NextJS</a>
-                                    <a href="">GeeksForGeeks</a>
+                                    <span>SpecialThanksTo</span>
+                                    <a href="https://www.geeksforgeeks.org/" target="_blank">GeeksForGeeks</a>
+                                    <a href="https://github.com/" target="_blank">Github</a>
+                                    <a href="https://openai.com/chatgpt/" target="_blank">ChatGPT</a>
+                                    <a href="https://stackoverflow.com/" target="_blank">StackOverFlow</a>
+                                    <a href="https://www.petanikode.com/" target="_blank">PetaniKode</a>
                                 </div>
                             </div>
                         </div>
@@ -614,14 +614,21 @@
                 // Event listener untuk scroll
                 window.addEventListener('scroll', onScroll);
 
-                // Cek jika ada hash di URL
-                if (window.location.hash) {
-                    // Ganti URL dengan yang tanpa hash
-                    history.replaceState(null, null, window.location.href.split('#')[0]);
+                window.addEventListener('load', function () {
+                    if (window.location.hash) {
+                        // Ganti URL dengan yang tanpa hash
+                        history.replaceState(null, null, window.location.href.split('#')[0]);
 
-                    // Scroll halaman ke bagian atas
-                    window.scrollTo(0, 0);
-                }
+                        // Tambahkan penundaan sebelum scroll ke atas
+                        // setTimeout(() => {
+                        //     window.scrollTo(0, 0);
+                        // }, 100); // 100ms penundaan
+                    }
+                });
+
+                setTimeout(function() {
+                    window.scrollTo(0, 0); // Pastikan halaman di-scroll ke atas setelah semuanya dimuat
+                }, 100);
         });
     </script>
 

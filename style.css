@@ -95,6 +95,9 @@ html, body{
     font-size: 13px;
     font-family: var(--splinesans-mono);
 }
+.navbarrightlink a:hover{
+    color: white;
+}
 .nav-link.active{
     color: white;
 }
@@ -284,6 +287,7 @@ box-shadow: 0px 0px 130px 41px rgba(110,122,255,0.11);
     display: flex;
     flex-direction: row;
     gap: 6.1rem;
+    margin-top: 2rem;
 }
 .pengbpanel{
     display: flex;
