@@ -200,6 +200,7 @@ html, body{
     flex-direction: row;
     gap: 20px;
     align-items: center;
+    position: relative;
 }
 .des{
     padding: 15px 20px;
@@ -212,6 +213,17 @@ html, body{
     background-color: rgb(16, 16, 37);
     border-radius: 10px;
     transition: .2s ease-in-out;
+    cursor: pointer;
+}
+#copyNotification{
+    position: absolute;
+    top: 4rem;
+    left: 12rem;
+    flex-direction: row;
+    align-items: center;
+    display: none;
+    gap: 1rem;
+    transition: opacity 1s ease-in-out;
 }
 .des:hover, .cop:hover{
     -webkit-box-shadow:0px 0px 130px 41px rgba(110,122,255,0.11);
@@ -1008,10 +1020,32 @@ box-shadow: 0px 0px 130px 41px rgba(110,122,255,0.11);
         display: none;
         color: var(--darkblack-color);
     }
+    #copyNotification{
+        position: absolute;
+        top: 4rem;
+        left: 8rem;
+        flex-direction: row;
+        align-items: center;
+        display: none;
+        gap: 1rem;
+        transition: opacity 1s ease-in-out;
+    }
     /* tabletcheckpoint */
 }
 
 @media screen and (max-width: 620px) {
+    #copyNotification{
+        position: absolute;
+        top: 8rem;
+        font-size: 1rem;
+        left: 1rem;
+        flex-direction: row;
+        align-items: center;
+        display: none;
+        gap: 1rem;
+        transition: opacity 1s ease-in-out;
+    }
+
     .na{
         width: 100%;
         position: fixed;

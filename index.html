@@ -57,8 +57,9 @@
                         <h1>Buat <span class="" id="word-change">Interface</span> Semenarik Mungkin</h1>
                         <p id="hacker-text">Tuangkan ide seni terhadap interface sistem dengan tujuan memberi kesan nyaman kepada user</p>
                         <div class="landingbutton">
-                            <a href="" class="des"><i class="fa-brands fa-slack"></i> Lihat Desain</a>
-                            <a href="" class="cop"><i class="fa-regular fa-copy"></i> Copy Email</a>
+                            <a href="#proyek" class="des"><i class="fa-brands fa-slack"></i> Lihat Desain</a>
+                            <a class="cop" id="copyEmailButton"><i class="fa-regular fa-copy"></i> Copy Email</a>
+                            <p id="copyNotification"><i class="fa-regular fa-circle-check"></i> Berhasil copy email!</p>
                         </div>
                     </div>
                 </div>
@@ -306,6 +307,35 @@
     </div>
 
     <script>
+        document.getElementById('copyEmailButton').addEventListener('click', function(event) {
+            // Mencegah halaman refresh jika tombol adalah elemen <a>
+            event.preventDefault();
+
+            // Ambil email yang akan disalin
+            const email = 'wayiskarnis990@gmail.com';
+
+            // Gunakan Clipboard API untuk menyalin email ke clipboard
+            navigator.clipboard.writeText(email).then(function() {
+                // Tampilkan notifikasi di bawah tombol setelah berhasil menyalin
+                const notification = document.getElementById('copyNotification');
+                notification.style.display = 'block'; // Pastikan elemen muncul
+                notification.style.opacity = '1'; // Fade in dengan mengubah opacity
+
+                // Sembunyikan notifikasi dengan fade out setelah beberapa detik
+                setTimeout(function() {
+                    notification.style.opacity = '0'; // Fade out dengan mengubah opacity
+
+                    // Setelah transisi selesai, sembunyikan elemen
+                    setTimeout(function() {
+                        notification.style.display = 'none';
+                    }, 500); // Waktu transisi sama dengan yang di CSS (0.5 detik)
+                }, 3000); // Notifikasi terlihat selama 3 detik
+            }).catch(function(error) {
+                console.error('Gagal menyalin email:', error);
+            });
+        });
+
+
         // document.addEventListener('DOMContentLoaded', function () {
         //     // Setelah halaman selesai dimuat, tambahkan kelas 'visible' ke elemen dengan kelas .con
         //     const conElement = document.querySelector('.con');
