@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    overflow: hidden;
+}
+
+:root{
+    --main-color: ;
+    --secondary-color: ;
+}
+
+@media screen and (max-width: 840px) {
+
+}
+
+@media screen and (max-width: 420px) {
+
+}
