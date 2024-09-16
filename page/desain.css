@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(18, 18, 24);
+}
+
+.container{
+    padding: 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+#myVideo{
+    position: absolute;
+    opacity: 0.5;
+    width: 60%;
+    top: 10rem; /* Lebar penuh */
+        /* Mask berbentuk lingkaran dengan gradient transparan */
+        -webkit-mask-image: radial-gradient(circle, rgba(2,0,36,0.3253676470588235) 0%, rgba(0,212,255,0) 44%);
+
+        /* Mask untuk non-WebKit (opsional, jika ingin juga mendukung browser lain) */
+        mask-image: radial-gradient(circle, rgba(2,0,36,0.3253676470588235) 0%, rgba(0,212,255,0) 80%);
+}
+
