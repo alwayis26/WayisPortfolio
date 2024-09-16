@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: var(--splinesans-mono);
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 html, body{

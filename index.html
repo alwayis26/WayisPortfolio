@@ -613,6 +613,15 @@
                 }
                 // Event listener untuk scroll
                 window.addEventListener('scroll', onScroll);
+
+                // Cek jika ada hash di URL
+                if (window.location.hash) {
+                    // Ganti URL dengan yang tanpa hash
+                    history.replaceState(null, null, window.location.href.split('#')[0]);
+
+                    // Scroll halaman ke bagian atas
+                    window.scrollTo(0, 0);
+                }
         });
     </script>
 
