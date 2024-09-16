@@ -510,73 +510,96 @@
             setInterval(changeWord, wordChangeIntervalTime);
 
             // Hacker effect on #proyek-animasi triggered by scroll
+            // const proyekAnimasiElement = document.getElementById('proyek-animasi');
+            // const proyekOriginalText = "Proyek Yang Sudah Saya Kerjakan";
+            // let isAnimating = false;
+
+            // function startHackerEffectOnScroll() {
+            //     if (isAnimating) return;
+            //     isAnimating = true;
+
+            //     let iterations = 0;
+            //     const totalIterations = 20;
+            //     const intervalTime = 30;
+
+            //     const interval = setInterval(() => {
+            //         proyekAnimasiElement.innerText = proyekOriginalText
+            //             .split("")
+            //             .map((char, index) => {
+            //                 if (index < iterations) {
+            //                     return proyekOriginalText[index];
+            //                 }
+            //                 return letters[Math.floor(Math.random() * letters.length)];
+            //             })
+            //             .join("");
+
+            //         if (iterations >= proyekOriginalText.length) {
+            //             clearInterval(interval);
+            //             proyekAnimasiElement.innerText = proyekOriginalText;
+            //             isAnimating = false;
+            //         }
+            //         iterations += 2 / 3;
+            //     }, intervalTime);
+            // }
+
+            // function onScroll() {
+            //     const pengenalanSection = document.querySelector('.pro');
+            //     const sectionPosition = pengenalanSection.getBoundingClientRect();
+
+            //     if (sectionPosition.top < window.innerHeight && sectionPosition.bottom >= 0) {
+            //         startHackerEffectOnScroll();
+            //         window.removeEventListener('scroll', onScroll);
+            //     }
+            // }
+            // window.addEventListener('scroll', onScroll);
+
             const proyekAnimasiElement = document.getElementById('proyek-animasi');
             const proyekOriginalText = "Proyek Yang Sudah Saya Kerjakan";
+            const huruf = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             let isAnimating = false;
 
+            // Fungsi untuk memulai efek perubahan huruf
             function startHackerEffectOnScroll() {
                 if (isAnimating) return;
                 isAnimating = true;
 
                 let iterations = 0;
-                const totalIterations = 20;
-                const intervalTime = 30;
+                const intervalTime = 30; // Kecepatan perubahan karakter
 
                 const interval = setInterval(() => {
                     proyekAnimasiElement.innerText = proyekOriginalText
                         .split("")
                         .map((char, index) => {
                             if (index < iterations) {
-                                return proyekOriginalText[index];
+                                return proyekOriginalText[index]; // Kembalikan huruf asli setelah cukup iterasi
                             }
-                            return letters[Math.floor(Math.random() * letters.length)];
+                            return letters[Math.floor(Math.random() * huruf.length)]; // Ganti dengan huruf acak
                         })
                         .join("");
 
                     if (iterations >= proyekOriginalText.length) {
-                        clearInterval(interval);
+                        clearInterval(interval); // Hentikan setelah teks asli ditampilkan
                         proyekAnimasiElement.innerText = proyekOriginalText;
                         isAnimating = false;
                     }
-                    iterations += 2 / 3;
+                    iterations += 2 / 3; // Atur kecepatan iterasi
                 }, intervalTime);
             }
 
-            function onScroll() {
+            // Fungsi untuk mendeteksi ketika elemen proyek terlihat di viewport
+            function handleScrollForProyek() {
                 const pengenalanSection = document.querySelector('.pro');
                 const sectionPosition = pengenalanSection.getBoundingClientRect();
 
                 if (sectionPosition.top < window.innerHeight && sectionPosition.bottom >= 0) {
-                    startHackerEffectOnScroll();
-                    window.removeEventListener('scroll', onScroll);
+                    startHackerEffectOnScroll(); // Memulai animasi jika elemen terlihat
+                    window.removeEventListener('scroll', handleScrollForProyek); // Hapus event listener setelah animasi berjalan
                 }
             }
-            window.addEventListener('scroll', onScroll);
 
-            // // Logic to activate links on scroll
-            // const tentangLink = document.querySelector('.navbartentang');
-            // const proyekLink = document.querySelector('.navbarproyek');
-            // const penSection = document.querySelector('.pen');
-            // const proSection = document.querySelector('.pro');
+            // Tambahkan listener untuk scroll
+            window.addEventListener('scroll', handleScrollForProyek);
 
-            // window.addEventListener('scroll', function () {
-            //     const penPosition = penSection.getBoundingClientRect().top;
-            //     const proPosition = proSection.getBoundingClientRect().top;
-
-            //     // Activate Tentang link
-            //     if (penPosition <= window.innerHeight && penPosition >= 0) {
-            //         tentangLink.classList.add('active');
-            //     } else {
-            //         tentangLink.classList.remove('active');
-            //     }
-
-            //     // Activate Proyek link
-            //     if (proPosition <= window.innerHeight && proPosition >= 0) {
-            //         proyekLink.classList.add('active');
-            //     } else {
-            //         proyekLink.classList.remove('active');
-            //     }
-            // });
 
             // Ambil semua link navbar
             const navLinks = document.querySelectorAll('.nav-link');
