@@ -83,6 +83,9 @@ html, body{
     color: var(--darkblack-color);
     transition: .2s ease-in-out;
 }
+.navbarright a i:hover{
+    color: white;
+}
 .navbarrightlink{
     display: flex;
     flex-direction: row;
