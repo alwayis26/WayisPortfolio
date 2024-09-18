@@ -32,7 +32,7 @@
                     <div class="navbarrightline"></div>
                     <a href=""><i class="fa-brands fa-dribbble"></i></a>
                     <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="page/desain.html"><i class="fa-solid fa-paperclip" title="passwordGenerator"></i></a>
+                    <a href="page/desain.html" style="display: flex; flex-direction: row; align-items: center;"><img src="images/desainimg/logo 1.png" width="30px" height="30px" alt="" title="passGent"></a>
                 </div>
             </div>
         </div>
@@ -680,6 +680,12 @@
                 setTimeout(function() {
                     window.scrollTo(0, 0); // Pastikan halaman di-scroll ke atas setelah semuanya dimuat
                 }, 100);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('scroll', function() {
+                console.log('Halaman telah discroll!');
+            });
         });
     </script>
 

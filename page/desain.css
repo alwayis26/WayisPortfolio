@@ -8,30 +8,6 @@
     font-family: var(--space-gro);
 }
 
-/* scrollbar */
-/* Scrollbar untuk Chrome, Safari, dan Opera */
-::-webkit-scrollbar {
-    width: 5px; /* Mengatur lebar scrollbar */
-}
-
-/* Bagian track scrollbar */
-::-webkit-scrollbar-track {
-    background-color: #10101A; /* Warna background track */
-}
-
-/* Bagian thumb scrollbar */
-::-webkit-scrollbar-thumb {
-    background-color: #1f1f20; /* Warna thumb */
-    border-radius: 10px; /* Membuat bentuk thumb */
-}
-
-/* Bagian thumb saat dihover */
-::-webkit-scrollbar-thumb:hover {
-    background-color: #C850C0; /* Warna thumb saat dihover */
-}
-
-/* scrollbar */
-
 html, body{
     background-color: var(--black-color);
     height: 100vh;
@@ -58,17 +34,18 @@ html, body{
 }
 .container{
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     max-width: 1400px;
     padding: 0.5rem 10rem;
     position: relative;
     overflow-x: hidden;
     z-index: 888;
 }
+
 .navbar{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .navbarlogo img{
@@ -110,12 +87,71 @@ html, body{
     color: white;
 }
 
+.nav{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    transform: translateY(-4rem);
+    left: 0;
+    width: 100%;
+    transition: 0.8s ease-in-out;
+}
+.nav.active{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    transform: translateY(0);
+    left: 0;
+    width: 100%;
+    transition: 0.8s ease-in-out;
+}
+.navflex{
+    width: 100%;
+    padding: 1px 11rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(20, 18, 29, 0.8);
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+border: 1px solid rgba(54, 54, 54, 0.18);
+}
+.navflexlogo img{
+    width: 50px;
+}
+.navdirection{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.navdirection a{
+    color: var(--dark-color);
+    transition: .2s ease-in-out;
+}
+.navlinks{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 20px;
+}
+.navlinks a i{
+    color: var(--dark-color);
+    transition: .2s ease-in-out;
+}
+.navdirection a:hover, .navlinks a i:hover{
+    color: white;
+}
+
 .lan{
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
     padding: 5rem 0;
+    position: relative;
+    z-index: 777;
 }
 .lanhook{
     display: flex;
@@ -204,8 +240,8 @@ html, body{
 }
 .light2{
     position: absolute;
-    top: -40rem;
-    right: -40rem;
+    top: 0;
+    right: 0;
     z-index: -1;
 }
 #video1{
@@ -250,13 +286,6 @@ html, body{
     top: 90rem;
     left: 60rem;
 }
-.light3{
-    position: absolute;
-    z-index: -2;
-    top: 30rem;
-    opacity: 0.3;
-    left: 60rem;
-}
 .mainan3{
     position: absolute;
     z-index: -2;
@@ -265,6 +294,16 @@ html, body{
     rotate: 199deg;
     opacity: 0.3;
     left: 60rem;
+}
+.pra{
+    position: relative;
+}
+.light3{
+    position: absolute;
+    z-index: 1;
+    top: 30rem;
+    opacity: 0.3;
+    right: -10rem;
 }
 .pranala{
     display: flex;
@@ -330,9 +369,10 @@ html, body{
 }
 #splash1{
     position: absolute;
-    opacity: 0.2;
+    opacity: 0.1;
     top: 3rem;
-    right: -20rem;
+    width: 50rem;
+    right: -5rem;
     z-index: -1;
 }
 .lighteko1{
@@ -484,14 +524,14 @@ html, body{
     position: absolute;
     width: 40rem;
     z-index: -1;
-    top: 5rem;
+    top: 0rem;
     opacity: 0.5;
 }
 .genlight2{
     position: absolute;
     width: 40rem;
     z-index: -1;
-    top: -5rem;
+    top: 0;
     left: -30rem;
     opacity: 0.3;
 }
@@ -511,6 +551,7 @@ html, body{
     gap: 2rem;
     align-items: center;
     justify-content: center;
+    position: relative;
     width: 50rem;
     height: 15rem;
     -webkit-backdrop-filter: blur( 4.5px );
@@ -538,8 +579,8 @@ html, body{
 .genmainan{
     position: absolute;
     z-index: -1;
-    top: 25rem;
-    left: 6rem;
+    top: 0;
+    left: 32rem;
 }
 .gb{
     width: 10rem;
@@ -619,7 +660,6 @@ html, body{
         max-width: 1400px;
         padding: 1rem 2rem;
         position: relative;
-        overflow-x: hidden;
         z-index: 888;
     }
     .navbar{
@@ -810,10 +850,9 @@ html, body{
     }
     .light3{
         position: absolute;
-        z-index: -2;
+        z-index: 1;
         top: 60rem;
         opacity: 0.3;
-        left: -10rem;
     }
     .mainan3{
         position: absolute;
@@ -1152,6 +1191,45 @@ html, body{
     .gb:hover{
         transform: translateY(-10px);
     }
+
+    .navflex{
+        width: 100%;
+        padding: 1px 11rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(20, 18, 29, 0.8);
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba(54, 54, 54, 0.18);
+    }
+    .navflexlogo img{
+        width: 50px;
+    }
+    .navdirection{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .navdirection a{
+        color: var(--dark-color);
+        transition: .2s ease-in-out;
+    }
+    .navlinks{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        font-size: 20px;
+    }
+    .navlinks a i{
+        color: var(--dark-color);
+        transition: .2s ease-in-out;
+    }
+    .navdirection a:hover, .navlinks a i:hover{
+        color: white;
+    }
     /* tablet checkpint */
 }
 
@@ -1167,7 +1245,6 @@ html, body{
         max-width: 1400px;
         padding: 1rem 1rem;
         position: relative;
-        overflow-x: hidden;
         z-index: 888;
     }
     .navbar{
@@ -1359,10 +1436,9 @@ html, body{
     }
     .light3{
         position: absolute;
-        z-index: -2;
+        z-index: 1;
         top: 60rem;
         opacity: 0.3;
-        left: -10rem;
     }
     .mainan3{
         position: absolute;
@@ -1599,6 +1675,7 @@ html, body{
         flex-direction: column;
         gap: 2rem;
         align-items: center;
+        position: relative;
         justify-content: center;
         width: 100%;
         height: 15rem;
@@ -1677,6 +1754,45 @@ html, body{
         transition: .2s ease-in-out;
     }
     .forightpanel a:hover{
+        color: white;
+    }
+
+    .navflex{
+        width: 100%;
+        padding: 1px 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(20, 18, 29, 0.8);
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba(54, 54, 54, 0.18);
+    }
+    .navflexlogo img{
+        width: 50px;
+    }
+    .navdirection{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .navdirection a{
+        color: var(--dark-color);
+        transition: .2s ease-in-out;
+    }
+    .navlinks{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        font-size: 20px;
+    }
+    .navlinks a i{
+        color: var(--dark-color);
+        transition: .2s ease-in-out;
+    }
+    .navdirection a:hover, .navlinks a i:hover{
         color: white;
     }
     /* mobilecheckpoint */

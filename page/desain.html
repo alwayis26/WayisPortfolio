@@ -14,8 +14,43 @@
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="stylesheet" href="../page/desain.css">
     <title>PassGent</title>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EaselPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/PixiPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+
+
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+    <!-- GSAP -->
+
 </head>
 <body>
+    <div class="nav">
+        <div class="navflex">
+            <div class="navflexlogo">
+                <img src="../images/desainimg/logo 1.png" alt="">
+            </div>
+            <div class="navdirection">
+                <a href="">Manual</a>
+                <a href="">Generator</a>
+            </div>
+            <div class="navlinks">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
     <!-- landing -->
         <div class="con">
             <div class="container">
@@ -37,7 +72,7 @@
                 </div>
 
                 <img src="../images/desainimg/light (1).png" alt="" class="light1">
-                <img src="../images/desainimg/light (1).png" alt="" class="light2">
+                <img src="../images/desainimg/lightleftup.png" alt="" class="light2">
                 <video autoplay muted loop id="video1">
                     <source src="../images/video/passwordgen_2.mp4" type="video/mp4">
                   </video>
@@ -56,9 +91,9 @@
                     <div class="lanparagraph">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, soluta laboriosam. Obcaecati</p>
                     </div>
-                    <div class="lanbutton">
-                        <a href="" class="langsung">Langsung Generate <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="" class="baca">Baca Manual <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="lanbutton" id="labutton">
+                        <a href="#generator" class="langsung">Langsung Generate <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#manual" class="baca">Baca Manual <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -66,11 +101,11 @@
                     <source src="../images/desainimg/world1.mp4" type="video/mp4">
                 </video>
                 <img src="../images/desainimg/circle.png" alt="" class="circle2">
-                <img src="../images/desainimg/light (1).png" alt="" class="light3">
                 <img src="../images/desainimg/3d-mini-folder (3).png" alt="" class="mainan3">
                 <div class="pra">
+                    <img src="../images/desainimg/lightleftside.png" alt="" class="light3">
                     <div class="pranala">
-                        <div class="pranalaa">
+                        <div class="pranalaa" id="manual">
                             <span class="subheader">Manual</span>
                             <img src="../images/desainimg/3d-fluency-smiling-face-with-smiling-eyes-emoji.png" alt="" class="subemoji">
                         </div>
@@ -135,7 +170,7 @@
                                 <div class="expboxapane">
                                     <div class="expboxone">
                                         <i class="fa-solid fa-cloud"></i>
-                                        <label for="">Proteksi Akun</label>
+                                        <label>Proteksi Akun</label>
                                     </div>
                                     <div class="expboxtwo">
                                         <h1>Keamanan Identitas</h1>
@@ -154,7 +189,7 @@
                                 <div class="expboxapane">
                                     <div class="expboxone">
                                         <i class="fa-solid fa-cloud"></i>
-                                        <label for="">Jaminan Cyber</label>
+                                        <label>Jaminan Cyber</label>
                                     </div>
                                     <div class="expboxtwo">
                                         <h1>Jaminan Proteksi Data</h1>
@@ -174,7 +209,7 @@
                 <!-- subpenjelasan -->
 
                 <!-- generator -->
-                    <div class="gen">
+                    <div class="gen" id="generator">
                         <img src="../images/desainimg/light (1).png" alt="" class="genlight">
                         <img src="../images/desainimg/light (1).png" alt="" class="genlight2">
                         <img src="../images/desainimg/3d-mini-folder (3).png" alt="" class="genmainan">
@@ -236,5 +271,13 @@
             </div>
         </div>
     <!-- landing -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('scroll', function() {
+                console.log('Halaman telah discroll!');
+            });
+        });
+    </script>
 </body>
 </html>
