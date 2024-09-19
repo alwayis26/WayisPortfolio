@@ -273,11 +273,19 @@
     <!-- landing -->
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            window.addEventListener('scroll', function() {
-                console.log('Halaman telah discroll!');
+        document.addEventListener('DOMContentLoaded', function () {
+            const nav = document.querySelector('.nav');
+
+            window.addEventListener('scroll', function () {
+                // Mengecek apakah posisi scroll sudah mencapai 300px
+                if (window.scrollY >= 300) {
+                    nav.classList.add('active'); // Tambahkan kelas .active ke .nav
+                } else {
+                    nav.classList.remove('active'); // Hapus kelas .active jika scroll kurang dari 300px
+                }
             });
         });
+
     </script>
 </body>
 </html>
