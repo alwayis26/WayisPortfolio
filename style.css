@@ -501,7 +501,24 @@ box-shadow: 0px 0px 130px 41px rgba(110,122,255,0.11);
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    position: relative;
     padding: 2rem 0 5rem 0;
+}
+.exlight{
+    position: absolute;
+    top: -10rem;
+    width: 100rem;
+    right: -80rem;
+    opacity: 0.8;
+    z-index: -1;
+}
+.exlight2{
+    position: absolute;
+    top: -10rem;
+    width: 100rem;
+    right: 20rem;
+    opacity: 0.3;
+    z-index: -1;
 }
 .exhead{
     display: flex;
@@ -652,7 +669,7 @@ box-shadow: 0px 0px 130px 41px rgba(110,122,255,0.11);
 .exboxrightbutton2{
     z-index: 444;
     transition: .2s ease-in-out;
-    width: 30%;
+    width: 20%;
     display: flex;
     flex-direction: row;
     justify-content: center;
