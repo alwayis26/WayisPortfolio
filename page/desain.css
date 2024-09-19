@@ -89,7 +89,7 @@ html, body{
     position: fixed;
     z-index: 999;
     top: 0;
-    transform: translateY(-5rem);
+    transform: translateY(-3rem);
     opacity: 0;
     left: 0;
     width: 100%;
@@ -655,7 +655,6 @@ border: 1px solid rgba(54, 54, 54, 0.18);
         justify-content: center;
     }
     .container{
-        height: 100vh;
         width: 100%;
         max-width: 1400px;
         padding: 1rem 2rem;
@@ -1230,6 +1229,40 @@ border: 1px solid rgba(54, 54, 54, 0.18);
     .navdirection a:hover, .navlinks a i:hover{
         color: white;
     }
+
+    .nav{
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        transform: translateY(-3rem);
+        opacity: 0;
+        left: 0;
+        width: 100%;
+        transition: 0.8s ease-in-out;
+    }
+    .nav.active{
+        position: fixed;
+        z-index: 999;
+        opacity: 1;
+        top: 0;
+        transform: translateY(0);
+        left: 0;
+        width: 100%;
+        transition: 0.8s ease-in-out;
+    }
+    .navflex{
+        width: 100%;
+        padding: 1px 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(20, 18, 29, 0.8);
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba(54, 54, 54, 0.18);
+    }
     /* tablet checkpint */
 }
 
@@ -1240,7 +1273,6 @@ border: 1px solid rgba(54, 54, 54, 0.18);
         justify-content: center;
     }
     .container{
-        height: 100vh;
         width: 100%;
         max-width: 1400px;
         padding: 1rem 1rem;
