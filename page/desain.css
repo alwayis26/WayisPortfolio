@@ -185,7 +185,7 @@ border: 1px solid rgba(54, 54, 54, 0.18);
     text-align: center;
 }
 .lanparagraph{
-    width: 40%;
+    width: 60%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -534,6 +534,12 @@ border: 1px solid rgba(54, 54, 54, 0.18);
     top: 0;
     left: -30rem;
     opacity: 0.3;
+}
+.genc{
+    width: 70%;
+}
+.genc p{
+    text-align: center;
 }
 .generatorpanel{
     display: flex;
