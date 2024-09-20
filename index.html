@@ -729,6 +729,27 @@
                 setTimeout(function() {
                     window.scrollTo(0, 0); // Pastikan halaman di-scroll ke atas setelah semuanya dimuat
                 }, 100);
+
+                    // Ambil semua link navbar yang mengarah ke anchor (#)
+                const navtautan = document.querySelectorAll('a[href^="#"]');
+                const navbarHeight = document.querySelector('.na').offsetHeight; // Sesuaikan selector dengan navbar Anda
+
+                navtautan.forEach(link => {
+                    link.addEventListener('click', function (event) {
+                        event.preventDefault(); // Mencegah perilaku default
+
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+
+                        if (targetElement) {
+                            const elementPosition = targetElement.offsetTop - navbarHeight; // Menghitung posisi scroll dengan offset navbar
+                            window.scrollTo({
+                                top: elementPosition,
+                                behavior: 'smooth' // Menambahkan efek scroll yang halus
+                            });
+                        }
+                    });
+                });
         });
 
         document.addEventListener('DOMContentLoaded', function() {

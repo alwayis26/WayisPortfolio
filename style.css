@@ -8,6 +8,7 @@
     font-family: var(--splinesans-mono);
     text-decoration: none;
     scroll-behavior: smooth;
+    scroll-padding-top: 200px;
 }
 
 html, body{
