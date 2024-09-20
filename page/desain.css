@@ -565,11 +565,14 @@ border: 1px solid rgba(54, 54, 54, 0.18);
     backdrop-filter: blur( 7.5px );
     border: none;
     outline: none;
-    width: 30rem;
+    width: 15rem;
     padding: 10px 20px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-#generator{
+#passwordgen{
     width: 100%;
     background: none;
     border: none;

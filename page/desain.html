@@ -228,12 +228,28 @@
                                 <h2>Ketuk magic untuk generate</h2>
                             </div>
                             <div class="generatormain">
-                                <input type="text" name="" id="generator">
+                                <input type="text" id="passwordgen">
                             </div>
-                            <button class="gb">magic!!</button>
+                            <button class="gb" onclick="generate()">magic!!</button>
                         </div>
                     </div>
                 <!-- generator -->
+
+                <script>
+                    function generate() {
+                        const length = 20; // Panjang password
+                        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?'; // Karakter yang akan digunakan
+                        let password = ''
+                        // Mengenerate password acak
+                            for (let i = 0; i < length; i++) {
+                                const randomIndex = Math.floor(Math.random() * characters.length);
+                                password += characters[randomIndex];
+
+                            // Menampilkan password yang dihasilkan di input dengan id="generator"
+                            document.getElementById('passwordgen').value = password;
+                        }
+                    }
+                </script>
 
                 <!-- footer -->
                 <div class="foline"></div>
