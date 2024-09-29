@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
     <title>WayisPortfolio</title>
 </head>
 <body>
@@ -197,7 +199,6 @@
                                     <span>Sebuah web untuk menggenerate password</span>
                                     <div class="proyekpanelbpanel">
                                         <a href="https://id.pinterest.com/pin/990721618023355501/" target="_blank"><i class="fa-brands fa-square-pinterest"></i></a>
-                                        <a href="https://wayisapp.vercel.app/page/desain.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +213,6 @@
                                     <span>Lorem ipsum dolor sit amet consectetur adipisicing</span>
                                     <div class="proyekpanelbpanel">
                                         <a href="https://id.pinterest.com/pin/990721618023355542/" target="_blank"><i class="fa-brands fa-square-pinterest"></i></a>
-                                        <a href="https://quotegent.vercel.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -224,7 +224,7 @@
                                     <p>ReactJS, SCSS, Figma</p>
                                 </div>
                                 <div class="proyekpanelb">
-                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing</span>
+                                    <span id="web">Website Akan Segera Dikembangkan</span>
                                     <div class="proyekpanelbpanel">
                                         <a href=""><i class="fa-brands fa-square-pinterest"></i></a>
                                         <a href=""><i class="fa-brands fa-github"></i></a>
@@ -503,6 +503,25 @@
         //     // Tambahkan listener scroll
         //     window.addEventListener('scroll', onScroll);
         // });
+
+        // Membuat instance Lenis dengan pengaturan durasi scroll
+        const lenis = new Lenis({
+            duration: 2.4, // Durasi scroll dalam detik, misalnya 2 detik
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) // Easing untuk scroll smooth
+        });
+
+        // Menjalankan animasi scroll dengan requestAnimationFrame
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // Optionally, you can listen to scroll events
+        lenis.on('scroll', (e) => {
+            console.log('Scroll event', e);
+        });
 
         document.addEventListener('DOMContentLoaded', function () {
             // Target elemen .con
